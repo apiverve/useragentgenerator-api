@@ -1,0 +1,80 @@
+openapi: 3.0.4
+info:
+  title: User Agent Generator
+  description: User Agent Generator is a simple tool for generating user agent strings. It returns a random user agent string.
+  termsOfService: https://apiverve.com/terms/
+  contact:
+    name: APIVerve Support
+    email: hello@apiverve.com
+    url: https://apiverve.com/contact
+  version: 1.0.9
+externalDocs:
+  description: Learn more about APIVerve
+  url: https://docs.apiverve.com?utm_source=openapi
+servers:
+- url: https://api.apiverve.com/
+paths:
+  /v1/useragentgenerator:
+    get:
+      summary: Generate User Agent
+      description: User Agent Generator is a simple tool for generating user agent strings. It returns a random user agent string.
+      operationId: useragentgenerator
+      parameters:
+      - name: device
+        default: desktop
+        in: query
+        schema:
+          type: string
+        required: true
+        description: The device type for the user agent string (e.g., desktop, mobile, tablet)
+        example: desktop
+      responses:
+        '200':
+          description: Successful Response
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  status:
+                    type: string
+                    description: status
+                  error:
+                    type: string
+                    description: error
+                  data:
+                    type: string
+                    description: data
+              example:
+                status: ok
+                error: 
+                data:
+                  ua: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_12) AppleWebKit/604.1.28 (KHTML, like Gecko) Version/16.0.0 Safari/604.1.28
+                  browser:
+                    name: Safari
+                    version: 16.0.0
+                    major: '16'
+                  engine:
+                    name: WebKit
+                    version: 604.1.28
+                  os:
+                    name: Mac OS
+                    version: '10.12'
+                  device:
+                    vendor: Apple
+                    model: Macintosh
+                  cpu: {}
+        '401':
+          description: Your request was not authorized, or your API Key was invalid
+        '404':
+          description: Requested resource was not found
+        '500':
+          description: A server error has occured, try again later
+components:
+  securitySchemes:
+    api_key:
+      type: apiKey
+      name: x-api-key
+      in: header
+security:
+- api_key: []
