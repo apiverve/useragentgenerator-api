@@ -11,8 +11,7 @@ namespace APIVerve.API.UserAgentGenerator
     public class UserAgentGeneratorQueryOptions
     {
         /// <summary>
-        /// The device type for the user agent string (e.g., desktop, mobile, tablet)
-        /// Example: desktop
+        /// The device type for the user agent string
         /// </summary>
         [JsonProperty("device")]
         public string Device { get; set; }
