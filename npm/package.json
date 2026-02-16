@@ -1,6 +1,6 @@
 {
   "name": "@apiverve/useragentgenerator",
-  "version": "1.1.13",
+  "version": "1.1.14",
   "description": "User Agent Generator is a simple tool for generating user agent strings. It returns a random user agent string.",
   "main": "index.js",
   "types": "index.d.ts",
