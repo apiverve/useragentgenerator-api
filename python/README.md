@@ -234,8 +234,9 @@ from apiverve_useragentgenerator.apiClient import UseragentgeneratorAPIClient
 
 api = UseragentgeneratorAPIClient("[YOUR_API_KEY]")
 
+query = { "device": "desktop" }
+
 try:
-    query = { "device": "desktop" }
     result = api.execute(query)
     print(result)
 finally:
