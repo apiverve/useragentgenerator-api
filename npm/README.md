@@ -122,24 +122,21 @@ async function makeRequest() {
   "status": "ok",
   "error": null,
   "data": {
-    "ua": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_12) AppleWebKit/604.1.28 (KHTML, like Gecko) Version/16.0.0 Safari/604.1.28",
+    "ua": "Mozilla/5.0 (Windows NT 6.4) AppleWebKit/537.36.0 (KHTML, like Gecko) Chrome/94.0.0.0 Safari/537.36.0",
     "browser": {
-      "name": "Safari",
-      "version": "16.0.0",
-      "major": "16"
+      "name": "Chrome",
+      "version": "94.0.0.0",
+      "major": "94"
     },
     "engine": {
-      "name": "WebKit",
-      "version": "604.1.28"
+      "name": "Blink",
+      "version": "94.0.0.0"
     },
     "os": {
-      "name": "Mac OS",
-      "version": "10.12"
+      "name": "Windows",
+      "version": "10"
     },
-    "device": {
-      "vendor": "Apple",
-      "model": "Macintosh"
-    },
+    "device": {},
     "cpu": {}
   }
 }
