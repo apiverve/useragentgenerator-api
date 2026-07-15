@@ -4,40 +4,47 @@ declare module '@apiverve/useragentgenerator' {
     secure?: boolean;
   }
 
+  /**
+   * Describes fields the current plan does not unlock. Locked fields arrive as null
+   * in `data`; `locked_fields` names them, using dot paths for nested fields.
+   * Absent when the plan unlocks everything.
+   */
+  export interface PremiumInfo {
+    message: string;
+    upgrade_url: string;
+    locked_fields: string[];
+  }
+
   export interface useragentgeneratorResponse {
     status: string;
     error: string | null;
     data: UserAgentGeneratorData;
     code?: number;
+    premium?: PremiumInfo;
   }
 
 
   interface UserAgentGeneratorData {
-      ua:      string;
+      ua:      null | string;
       browser: Browser;
       engine:  Engine;
       os:      Engine;
-      device:  Device;
+      device:  CPU;
       cpu:     CPU;
   }
   
   interface Browser {
-      name:    string;
-      version: string;
-      major:   string;
+      name:    null | string;
+      version: null | string;
+      major:   null | string;
   }
   
   interface CPU {
   }
   
-  interface Device {
-      vendor: string;
-      model:  string;
-  }
-  
   interface Engine {
-      name:    string;
-      version: string;
+      name:    null | string;
+      version: null | string;
   }
 
   export default class useragentgeneratorWrapper {
