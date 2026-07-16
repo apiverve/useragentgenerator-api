@@ -51,7 +51,7 @@ Here's a simple example to get you started quickly:
 
 ```csharp
 using System;
-using APIVerve;
+using APIVerve.API.UserAgentGenerator;
 
 class Program
 {
@@ -60,8 +60,8 @@ class Program
         // Initialize the API client
         var apiClient = new UserAgentGeneratorAPIClient("[YOUR_API_KEY]");
 
-        var queryOptions = new QueryOptions {
-    device = "desktop"
+        var queryOptions = new UserAgentGeneratorQueryOptions {
+    Device = "desktop"
 };
 
         // Make the API call
@@ -116,7 +116,7 @@ The modern async/await pattern provides the best performance and code readabilit
 ```csharp
 using System;
 using System.Threading.Tasks;
-using APIVerve;
+using APIVerve.API.UserAgentGenerator;
 
 public class Example
 {
@@ -124,8 +124,8 @@ public class Example
     {
         var apiClient = new UserAgentGeneratorAPIClient("[YOUR_API_KEY]");
 
-        var queryOptions = new QueryOptions {
-    device = "desktop"
+        var queryOptions = new UserAgentGeneratorQueryOptions {
+    Device = "desktop"
 };
 
         var response = await apiClient.ExecuteAsync(queryOptions);
@@ -148,7 +148,7 @@ If you need to use synchronous code, you can use the `Execute` method:
 
 ```csharp
 using System;
-using APIVerve;
+using APIVerve.API.UserAgentGenerator;
 
 public class Example
 {
@@ -156,8 +156,8 @@ public class Example
     {
         var apiClient = new UserAgentGeneratorAPIClient("[YOUR_API_KEY]");
 
-        var queryOptions = new QueryOptions {
-    device = "desktop"
+        var queryOptions = new UserAgentGeneratorQueryOptions {
+    Device = "desktop"
 };
 
         var response = apiClient.Execute(queryOptions);
@@ -185,7 +185,7 @@ The API client provides comprehensive error handling. Here are some examples:
 ```csharp
 using System;
 using System.Threading.Tasks;
-using APIVerve;
+using APIVerve.API.UserAgentGenerator;
 
 public class Example
 {
@@ -193,8 +193,8 @@ public class Example
     {
         var apiClient = new UserAgentGeneratorAPIClient("[YOUR_API_KEY]");
 
-        var queryOptions = new QueryOptions {
-    device = "desktop"
+        var queryOptions = new UserAgentGeneratorQueryOptions {
+    Device = "desktop"
 };
 
         try
@@ -237,7 +237,7 @@ public class Example
 ```csharp
 using System;
 using System.Threading.Tasks;
-using APIVerve;
+using APIVerve.API.UserAgentGenerator;
 
 public class Example
 {
@@ -249,8 +249,8 @@ public class Example
         apiClient.SetMaxRetries(3);        // Retry up to 3 times (default: 0, max: 3)
         apiClient.SetRetryDelay(2000);     // Wait 2 seconds between retries
 
-        var queryOptions = new QueryOptions {
-    device = "desktop"
+        var queryOptions = new UserAgentGeneratorQueryOptions {
+    Device = "desktop"
 };
 
         try
@@ -290,8 +290,8 @@ var apiClient = new UserAgentGeneratorAPIClient("[YOUR_API_KEY]");
 apiClient.AddCustomHeader("X-Custom-Header", "custom-value");
 apiClient.AddCustomHeader("X-Request-ID", Guid.NewGuid().ToString());
 
-var queryOptions = new QueryOptions {
-    device = "desktop"
+var queryOptions = new UserAgentGeneratorQueryOptions {
+    Device = "desktop"
 };
 
 var response = await apiClient.ExecuteAsync(queryOptions);
@@ -316,8 +316,8 @@ apiClient.SetLogger(message =>
     Console.WriteLine($"[LOG] {DateTime.Now:yyyy-MM-dd HH:mm:ss} - {message}");
 });
 
-var queryOptions = new QueryOptions {
-    device = "desktop"
+var queryOptions = new UserAgentGeneratorQueryOptions {
+    Device = "desktop"
 };
 
 var response = await apiClient.ExecuteAsync(queryOptions);
@@ -334,8 +334,8 @@ var apiClient = new UserAgentGeneratorAPIClient("[YOUR_API_KEY]");
 apiClient.SetMaxRetries(3);           // Retry up to 3 times (default: 0, max: 3)
 apiClient.SetRetryDelay(1500);        // Wait 1.5 seconds between retries (default: 1000ms)
 
-var queryOptions = new QueryOptions {
-    device = "desktop"
+var queryOptions = new UserAgentGeneratorQueryOptions {
+    Device = "desktop"
 };
 
 var response = await apiClient.ExecuteAsync(queryOptions);
@@ -346,8 +346,8 @@ var response = await apiClient.ExecuteAsync(queryOptions);
 The API client implements `IDisposable` for proper resource cleanup:
 
 ```csharp
-var queryOptions = new QueryOptions {
-    device = "desktop"
+var queryOptions = new UserAgentGeneratorQueryOptions {
+    Device = "desktop"
 };
 
 using (var apiClient = new UserAgentGeneratorAPIClient("[YOUR_API_KEY]"))
@@ -367,24 +367,21 @@ using (var apiClient = new UserAgentGeneratorAPIClient("[YOUR_API_KEY]"))
   "status": "ok",
   "error": null,
   "data": {
-    "ua": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_12) AppleWebKit/604.1.28 (KHTML, like Gecko) Version/16.0.0 Safari/604.1.28",
+    "ua": "Mozilla/5.0 (Windows NT 6.4) AppleWebKit/537.36.0 (KHTML, like Gecko) Chrome/94.0.0.0 Safari/537.36.0",
     "browser": {
-      "name": "Safari",
-      "version": "16.0.0",
-      "major": "16"
+      "name": "Chrome",
+      "version": "94.0.0.0",
+      "major": "94"
     },
     "engine": {
-      "name": "WebKit",
-      "version": "604.1.28"
+      "name": "Blink",
+      "version": "94.0.0.0"
     },
     "os": {
-      "name": "Mac OS",
-      "version": "10.12"
+      "name": "Windows",
+      "version": "10"
     },
-    "device": {
-      "vendor": "Apple",
-      "model": "Macintosh"
-    },
+    "device": {},
     "cpu": {}
   }
 }
