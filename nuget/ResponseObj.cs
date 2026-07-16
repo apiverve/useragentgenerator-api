@@ -25,6 +25,9 @@ namespace APIVerve.API.UserAgentGenerator
 
         [JsonProperty("data")]
         public Data Data { get; set; }
+
+        [JsonProperty("premium")]
+        public Premium Premium { get; set; }
     }
 
     public partial class Data
@@ -42,7 +45,7 @@ namespace APIVerve.API.UserAgentGenerator
         public Engine Os { get; set; }
 
         [JsonProperty("device")]
-        public Device Device { get; set; }
+        public Cpu Device { get; set; }
 
         [JsonProperty("cpu")]
         public Cpu Cpu { get; set; }
@@ -57,20 +60,11 @@ namespace APIVerve.API.UserAgentGenerator
         public string Version { get; set; }
 
         [JsonProperty("major")]
-        public long Major { get; set; }
+        public long? Major { get; set; }
     }
 
     public partial class Cpu
     {
-    }
-
-    public partial class Device
-    {
-        [JsonProperty("vendor")]
-        public string Vendor { get; set; }
-
-        [JsonProperty("model")]
-        public string Model { get; set; }
     }
 
     public partial class Engine
@@ -80,5 +74,17 @@ namespace APIVerve.API.UserAgentGenerator
 
         [JsonProperty("version")]
         public string Version { get; set; }
+    }
+
+    public partial class Premium
+    {
+        [JsonProperty("message")]
+        public string Message { get; set; }
+
+        [JsonProperty("upgrade_url")]
+        public Uri UpgradeUrl { get; set; }
+
+        [JsonProperty("locked_fields")]
+        public string[] LockedFields { get; set; }
     }
 }
