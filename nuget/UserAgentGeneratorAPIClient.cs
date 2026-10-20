@@ -67,7 +67,7 @@ namespace APIVerve.API.UserAgentGenerator
         /// <summary>Validation rules for parameters</summary>
         private static readonly Dictionary<string, ValidationRule> _validationRules = new Dictionary<string, ValidationRule>
         {
-            { "device", new ValidationRule { Type = "string", Required = true } }
+            { "device", new ValidationRule { Type = "string", Required = false } }
         };
 
         /// <summary>Format validation patterns</summary>
