@@ -2,8 +2,10 @@ openapi: 3.0.4
 info:
   title: User Agent Generator
   description: >-
-    User Agent Generator is a simple tool for generating user agent strings. It
-    returns a random user agent string.
+    User Agent Generator creates realistic user agent strings for desktop,
+    mobile, and tablet devices. Each request outputs the complete string with
+    parsed browser and operating system names and versions, while paid plans add
+    engine and CPU details.
   termsOfService: https://apiverve.com/terms/
   contact:
     name: APIVerve Support
@@ -18,7 +20,7 @@ servers:
 paths:
   /v1/useragentgenerator:
     get:
-      summary: Generate User Agent
+      summary: User Agent Generator
       description: Generate a random user agent string
       operationId: useragentgenerator
       parameters:
@@ -26,7 +28,7 @@ paths:
           in: query
           schema:
             type: string
-          required: true
+          required: false
           description: The device type for the user agent string
           example: desktop
       responses:
