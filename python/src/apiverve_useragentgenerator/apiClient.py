@@ -1,6 +1,6 @@
 import re
-from typing import Dict, Optional, Any
-from dataclasses import dataclass, List
+from typing import Dict, Optional, Any, List
+from dataclasses import dataclass
 import requests
 
 
@@ -24,7 +24,7 @@ class ValidationError(UseragentgeneratorAPIClientError):
 class UseragentgeneratorAPIClient:
     # Validation rules for parameters (generated from schema)
     VALIDATION_RULES = {
-        "device": {"type": "string", "required": True, "default": "desktop"}
+        "device": {"type": "string", "required": False, "default": "desktop"}
     }
 
     # Format validation patterns

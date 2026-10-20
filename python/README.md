@@ -1,13 +1,12 @@
 User Agent Generator API
 ============
 
-User Agent Generator is a simple tool for generating user agent strings. It returns a random user agent string.
+User Agent Generator creates realistic user agent strings for desktop, mobile, and tablet devices. Each request outputs the complete string with parsed browser and operating system names and versions, while paid plans add engine and CPU details.
 
-![Build Status](https://img.shields.io/badge/build-passing-green)
-![Code Climate](https://img.shields.io/badge/maintainability-B-purple)
-![Prod Ready](https://img.shields.io/badge/production-ready-blue)
 
-This is a Python API Wrapper for the [User Agent Generator API](https://apiverve.com/marketplace/useragentgenerator?utm_source=pypi&utm_medium=readme)
+[![PyPI version](https://img.shields.io/pypi/v/apiverve-useragentgenerator.svg)](https://pypi.org/project/apiverve-useragentgenerator/)
+
+This is a Python wrapper for the [User Agent Generator API](https://apiverve.com/marketplace/useragentgenerator?utm_source=pypi&utm_medium=referral&utm_content=readme)
 
 ---
 
@@ -29,8 +28,8 @@ pip3 install apiverve-useragentgenerator
 
 ## Configuration
 
-Before using the useragentgenerator API client, you have to setup your account and obtain your API Key.
-You can get it by signing up at [https://apiverve.com](https://apiverve.com?utm_source=pypi&utm_medium=readme)
+Before using the User Agent Generator API client, you have to setup your account and obtain your API Key.
+You can get it by signing up at [https://apiverve.com](https://apiverve.com?utm_source=pypi&utm_medium=referral&utm_content=readme)
 
 ---
 
@@ -60,7 +59,7 @@ except Exception as e:
 
 ## Usage
 
-The User Agent Generator API documentation is found here: [https://docs.apiverve.com/ref/useragentgenerator](https://docs.apiverve.com/ref/useragentgenerator?utm_source=pypi&utm_medium=readme).
+The User Agent Generator API documentation is found here: [https://docs.apiverve.com/ref/useragentgenerator](https://docs.apiverve.com/ref/useragentgenerator?utm_source=pypi&utm_medium=referral&utm_content=readme).
 You can find parameters, example responses, and status codes documented here.
 
 ### Setup
@@ -102,24 +101,21 @@ print(result)
   "status": "ok",
   "error": null,
   "data": {
-    "ua": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_12) AppleWebKit/604.1.28 (KHTML, like Gecko) Version/16.0.0 Safari/604.1.28",
+    "ua": "Mozilla/5.0 (Windows NT 6.4) AppleWebKit/537.36.0 (KHTML, like Gecko) Chrome/94.0.0.0 Safari/537.36.0",
     "browser": {
-      "name": "Safari",
-      "version": "16.0.0",
-      "major": "16"
+      "name": "Chrome",
+      "version": "94.0.0.0",
+      "major": "94"
     },
     "engine": {
-      "name": "WebKit",
-      "version": "604.1.28"
+      "name": "Blink",
+      "version": "94.0.0.0"
     },
     "os": {
-      "name": "Mac OS",
-      "version": "10.12"
+      "name": "Windows",
+      "version": "10"
     },
-    "device": {
-      "vendor": "Apple",
-      "model": "Macintosh"
-    },
+    "device": {},
     "cpu": {}
   }
 }
@@ -248,7 +244,7 @@ finally:
 
 ## Customer Support
 
-Need any assistance? [Get in touch with Customer Support](https://apiverve.com/contact?utm_source=pypi&utm_medium=readme).
+Need any assistance? [Get in touch with Customer Support](https://apiverve.com/contact?utm_source=pypi&utm_medium=referral&utm_content=readme).
 
 ---
 
@@ -259,12 +255,12 @@ Stay up to date by following [@apiverveHQ](https://twitter.com/apiverveHQ) on Tw
 
 ## Legal
 
-All usage of the APIVerve website, API, and services is subject to the [APIVerve Terms of Service](https://apiverve.com/terms?utm_source=pypi&utm_medium=readme) and all legal documents and agreements.
+All usage of the APIVerve website, API, and services is subject to the [APIVerve Terms of Service](https://apiverve.com/terms?utm_source=pypi&utm_medium=referral&utm_content=readme) and all legal documents and agreements.
 
 ---
 
 ## License
-Licensed under the The MIT License (MIT)
+Licensed under the MIT License (MIT)
 
 Copyright (&copy;) 2026 APIVerve, and EvlarSoft LLC
 
