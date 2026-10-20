@@ -30,7 +30,7 @@ class useragentgeneratorWrapper {
         this.baseURL = 'https://api.apiverve.com/v1/useragentgenerator';
 
         // Validation rules for parameters (generated from schema)
-        this.validationRules = {"device":{"type":"string","required":true,"default":"desktop"}};
+        this.validationRules = {"device":{"type":"string","required":false,"default":"desktop"}};
     }
 
     /**
