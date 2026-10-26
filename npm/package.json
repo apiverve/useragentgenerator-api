@@ -1,6 +1,6 @@
 {
   "name": "@apiverve/useragentgenerator",
-  "version": "1.2.2",
+  "version": "1.2.3",
   "description": "User Agent Generator creates realistic user agent strings for desktop, mobile, and tablet devices. Each request outputs the complete string with parsed browser and operating system names and versions, while paid plans add engine and CPU details.",
   "main": "index.js",
   "types": "index.d.ts",
