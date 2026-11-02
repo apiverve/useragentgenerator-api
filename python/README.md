@@ -43,7 +43,11 @@ from apiverve_useragentgenerator.apiClient import UseragentgeneratorAPIClient
 # Initialize the client with your APIVerve API key
 api = UseragentgeneratorAPIClient("[YOUR_API_KEY]")
 
-query = { "device": "desktop" }
+query = {
+    "device": "desktop",
+    "browser": "chrome",
+    "os": "windows"
+}
 
 try:
     # Make the API call
@@ -81,7 +85,11 @@ Using the API client, you can perform requests to the API.
 ###### Define Query
 
 ```python
-query = { "device": "desktop" }
+query = {
+    "device": "desktop",
+    "browser": "chrome",
+    "os": "windows"
+}
 ```
 
 ###### Simple Request
@@ -134,7 +142,11 @@ from apiverve_useragentgenerator.apiClient import UseragentgeneratorAPIClient, U
 
 api = UseragentgeneratorAPIClient("[YOUR_API_KEY]")
 
-query = { "device": "desktop" }
+query = {
+    "device": "desktop",
+    "browser": "chrome",
+    "os": "windows"
+}
 
 try:
     result = api.execute(query)
@@ -155,7 +167,11 @@ from apiverve_useragentgenerator.apiClient import UseragentgeneratorAPIClient, U
 
 api = UseragentgeneratorAPIClient("[YOUR_API_KEY]")
 
-query = { "device": "desktop" }
+query = {
+    "device": "desktop",
+    "browser": "chrome",
+    "os": "windows"
+}
 
 try:
     result = api.execute(query)
@@ -189,7 +205,11 @@ The client supports the context manager protocol for automatic resource cleanup:
 ```python
 from apiverve_useragentgenerator.apiClient import UseragentgeneratorAPIClient, UseragentgeneratorAPIClientError
 
-query = { "device": "desktop" }
+query = {
+    "device": "desktop",
+    "browser": "chrome",
+    "os": "windows"
+}
 
 # Using context manager ensures proper cleanup
 with UseragentgeneratorAPIClient("[YOUR_API_KEY]") as api:
@@ -215,7 +235,11 @@ from apiverve_useragentgenerator.apiClient import UseragentgeneratorAPIClient
 # Enable debug mode
 api = UseragentgeneratorAPIClient("[YOUR_API_KEY]", debug=True)
 
-query = { "device": "desktop" }
+query = {
+    "device": "desktop",
+    "browser": "chrome",
+    "os": "windows"
+}
 
 # Debug information will be printed to console
 result = api.execute(query)
@@ -230,7 +254,11 @@ from apiverve_useragentgenerator.apiClient import UseragentgeneratorAPIClient
 
 api = UseragentgeneratorAPIClient("[YOUR_API_KEY]")
 
-query = { "device": "desktop" }
+query = {
+    "device": "desktop",
+    "browser": "chrome",
+    "os": "windows"
+}
 
 try:
     result = api.execute(query)

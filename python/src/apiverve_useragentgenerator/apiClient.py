@@ -24,7 +24,9 @@ class ValidationError(UseragentgeneratorAPIClientError):
 class UseragentgeneratorAPIClient:
     # Validation rules for parameters (generated from schema)
     VALIDATION_RULES = {
-        "device": {"type": "string", "required": False, "default": "desktop"}
+        "device": {"type": "string", "required": False, "default": "desktop"},
+        "browser": {"type": "string", "required": False},
+        "os": {"type": "string", "required": False}
     }
 
     # Format validation patterns
