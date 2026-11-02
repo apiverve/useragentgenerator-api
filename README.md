@@ -31,7 +31,9 @@ The User Agent Generator API provides a simple, reliable way to integrate user a
 async function callUserAgentGeneratorAPI() {
     try {
         const params = new URLSearchParams({
-            device: 'desktop'
+            device: 'desktop',
+            browser: 'chrome',
+            os: 'windows'
         });
 
         const response = await fetch(`https://api.apiverve.com/v1/useragentgenerator?${params}`, {
@@ -54,7 +56,7 @@ callUserAgentGeneratorAPI();
 ### Using cURL
 
 ```bash
-curl -X GET "https://api.apiverve.com/v1/useragentgenerator?device=desktop" \
+curl -X GET "https://api.apiverve.com/v1/useragentgenerator?device=desktop&browser=chrome&os=windows" \
   -H "x-api-key: YOUR_API_KEY_HERE"
 ```
 

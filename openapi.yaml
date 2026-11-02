@@ -29,8 +29,24 @@ paths:
           schema:
             type: string
           required: false
-          description: The device type for the user agent string
+          description: 'The device type: desktop, mobile (phones) or tablet'
           example: desktop
+        - name: browser
+          in: query
+          schema:
+            type: string
+          required: false
+          description: Only user agents of this browser
+          example: chrome
+        - name: os
+          in: query
+          schema:
+            type: string
+          required: false
+          description: >-
+            Only user agents of this operating system. iPads send the macOS
+            desktop user agent
+          example: windows
       responses:
         '200':
           description: Successful Response

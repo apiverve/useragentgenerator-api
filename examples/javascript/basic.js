@@ -15,7 +15,9 @@ async function callUserAgentGeneratorAPI() {
   try {
     // Query parameters
     const params &#x3D; new URLSearchParams({
-            device: &#x27;desktop&#x27;
+            device: &#x27;desktop&#x27;,
+            browser: &#x27;chrome&#x27;,
+            os: &#x27;windows&#x27;
         });
 
     const response = await fetch(`${API_URL}?${params}`, {

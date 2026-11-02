@@ -15,6 +15,8 @@ public class BasicExample {
             // Query parameters
             Map&lt;String, Object&gt; parameters &#x3D; new HashMap&lt;&gt;();
         parameters.put(&quot;device&quot;, &quot;desktop&quot;);
+        parameters.put(&quot;browser&quot;, &quot;chrome&quot;);
+        parameters.put(&quot;os&quot;, &quot;windows&quot;);
 
             // Execute the API request
             APIResponse response = client.execute(parameters);
