@@ -35,7 +35,11 @@ require 'apiverve_useragentgenerator'
 client = APIVerve::Useragentgenerator::Client.new(api_key: "YOUR_API_KEY")
 
 # Make a request
-response = client.execute({ device: "desktop" })
+response = client.execute({
+  device: "desktop",
+  browser: "chrome",
+  os: "windows"
+})
 
 # Print the response
 puts response
@@ -46,7 +50,7 @@ puts response
 
 ```ruby
 begin
-  response = client.execute({ device: "desktop" })
+  response = client.execute({ device: "desktop", browser: "chrome", os: "windows" })
   puts response["data"]
 rescue APIVerve::Useragentgenerator::ValidationError => e
   puts "Validation error: #{e.errors.join(', ')}"

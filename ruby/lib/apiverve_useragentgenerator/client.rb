@@ -10,7 +10,7 @@ module APIVerve
     #
     # @example Basic usage
     #   client = APIVerve::Useragentgenerator::Client.new(api_key: "your_api_key")
-    #   response = client.execute({ device: "desktop" })
+    #   response = client.execute({ device: "desktop", browser: "chrome", os: "windows" })
     #   puts response
     #
     # @see https://apiverve.com/marketplace/useragentgenerator?utm_source=ruby&utm_medium=referral&utm_content=readme
@@ -19,7 +19,7 @@ module APIVerve
       DEFAULT_TIMEOUT = 30
 
       # Validation rules for parameters
-      VALIDATION_RULES = { 'device' => { type: 'string', required: false } }
+      VALIDATION_RULES = { 'device' => { type: 'string', required: false }, 'browser' => { type: 'string', required: false }, 'os' => { type: 'string', required: false } }
 
       # Format validation patterns
       FORMAT_PATTERNS = {
