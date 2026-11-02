@@ -15,7 +15,9 @@ const api = new useragentgeneratorAPI({
 
 // Example query
 var query = {
-  device: "desktop"
+  device: "desktop",
+  browser: "chrome",
+  os: "windows"
 };
 
 // Make the API request using callback
