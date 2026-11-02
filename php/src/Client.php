@@ -15,7 +15,7 @@ use APIVerve\Useragentgenerator\Exceptions\ValidationException;
  * @example Basic usage
  * ```php
  * $client = new Client('your_api_key');
- * $response = $client->execute(['device' => 'desktop']);
+ * $response = $client->execute(['device' => 'desktop', 'browser' => 'chrome', 'os' => 'windows']);
  * print_r($response);
  * ```
  *
@@ -34,7 +34,9 @@ class Client
      * Validation rules for parameters
      */
     private const VALIDATION_RULES = [
-        'device' => ['type' => 'string', 'required' => false]
+        'device' => ['type' => 'string', 'required' => false],
+        'browser' => ['type' => 'string', 'required' => false],
+        'os' => ['type' => 'string', 'required' => false]
     ];
 
     /**

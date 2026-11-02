@@ -27,7 +27,11 @@ use APIVerve\Useragentgenerator\Client;
 $client = new Client('YOUR_API_KEY');
 
 // Make a request
-$response = $client->execute(['device' => 'desktop']);
+$response = $client->execute([
+    'device' => 'desktop',
+    'browser' => 'chrome',
+    'os' => 'windows'
+]);
 
 // Print the response
 print_r($response);
@@ -42,7 +46,7 @@ use APIVerve\Useragentgenerator\Exceptions\APIException;
 use APIVerve\Useragentgenerator\Exceptions\ValidationException;
 
 try {
-    $response = $client->execute(['device' => 'desktop']);
+    $response = $client->execute(['device' => 'desktop', 'browser' => 'chrome', 'os' => 'windows']);
     print_r($response['data']);
 } catch (ValidationException $e) {
     echo "Validation error: " . implode(', ', $e->getErrors());
